@@ -1,0 +1,488 @@
+/* =========================================================
+   VARIABLES (PALETA + RADIUS + SOMBRES)
+========================================================= */
+
+:root {
+    --bg-main: #f3f7fa;
+    --bg-glass: rgba(255,255,255,0.8);
+    --border-soft: #dce3ea;
+    --shadow-soft: 0 14px 34px rgba(0, 0, 0, 0.10);
+
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+
+    --accent: #4ade80;
+    --accent-soft: rgba(74,222,128,0.15);
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg-main);
+    font-family: "Inter", sans-serif;
+    color: var(--text-main);
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg-glass);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 10px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+}
+
+.nav-content a {
+    text-decoration: none;
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.nav-content a:hover {
+    background: var(--accent-soft);
+    color: var(--text-main);
+}
+
+/* =========================================================
+   HERO (INDEX)
+========================================================= */
+
+.hero {
+    padding: 70px 20px 30px;
+}
+
+.hero-content {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 34px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Centrado */
+.hero-center {
+    text-align: center;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-family: "Poppins";
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.hero-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* Botón */
+.hero-btn {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 20px;
+
+    background: var(--accent);
+    color: #064e3b;
+    font-weight: 600;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: #22c55e;
+}
+
+/* =========================================================
+   TARGETES (INDEX)
+========================================================= */
+
+.cards-section {
+    padding: 20px 20px 50px;
+}
+
+.cards-section h2 {
+    font-family: "Poppins";
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.cards-container {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 380px;
+    margin-inline: auto;
+}
+
+.card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+
+    padding: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.card-img {
+    width: 100%;
+    height: 160px;
+    border-radius: var(--radius-md);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+.img1 { background-image: url("https://picsum.photos/500?1"); }
+.img2 { background-image: url("https://picsum.photos/500?2"); }
+.img3 { background-image: url("https://picsum.photos/500?3"); }
+
+.card:hover .card-img {
+    background-image: url("https://picsum.photos/500?random=15");
+}
+
+.card h3 {
+    margin: 12px 4px 6px;
+    font-family: "Poppins";
+    font-size: 1.1rem;
+}
+
+.card p {
+    margin: 0 4px 6px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Timing functions */
+.card-ease   { transition-timing-function: ease; }
+.card-easein { transition-timing-function: ease-in; }
+.card-linear { transition-timing-function: linear; }
+
+/* =========================================================
+   MENÚ SECUNDARI INDEX
+========================================================= */
+
+.submenu-section h2 {
+    text-align: center;
+    font-family: "Poppins";
+}
+
+.submenu {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 350px;
+    margin-inline: auto;
+}
+
+.submenu a {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    color: var(--text-main);
+    transition: 0.25s ease;
+}
+
+.submenu a:hover {
+    background: var(--accent-soft);
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+   GALERIA — ANIMACIONS
+========================================================= */
+
+.page {
+    padding: 60px 20px 20px;
+    text-align: center;
+}
+
+.page h1 {
+    font-family: "Poppins";
+    font-size: 2rem;
+}
+
+.page p {
+    color: var(--text-muted);
+}
+
+/* Loader */
+.loader-section {
+    padding: 40px 20px;
+}
+
+.loader {
+    width: 54px;
+    height: 54px;
+    border-radius: 999px;
+    border: 5px solid rgba(148,163,184,0.35);
+    border-top-color: var(--accent);
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Animació principal */
+.main-animation {
+    padding: 20px 20px 50px;
+}
+
+.animated-box {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 24px;
+    background: var(--accent);
+    box-shadow: 0 18px 35px rgba(74,222,128,0.5);
+    animation: bounceSpin 3s ease-in-out infinite alternate;
+}
+
+@keyframes bounceSpin {
+    0%   { transform: translateY(0) rotate(0deg) scale(1); background:#4ade80; opacity:0.7; }
+    25%  { transform: translateY(-30px) rotate(45deg) scale(1.1); background:#22c55e; }
+    50%  { transform: translateY(0) rotate(90deg) scale(0.93); background:#86efac; }
+    75%  { transform: translateY(-20px) rotate(135deg) scale(1.05); background:#4ade80; }
+    100% { transform: translateY(0) rotate(180deg) scale(1); background:#22c55e; opacity:0.8; }
+}
+
+/* Scroll reveal */
+.scroll-section {
+    padding: 40px 20px 80px;
+}
+
+.reveal-box {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 26px 24px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+
+    opacity: 0;
+    animation: revealFade 1s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+}
+
+@keyframes revealFade {
+    from { opacity:0; transform:translateY(40px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+
+@supports not (animation-timeline: view()) {
+    .reveal-box {
+        opacity: 1;
+        border-style: dashed;
+        border-color: var(--accent);
+    }
+}
+
+/* =========================================================
+   GUIA D’ESTIL
+========================================================= */
+
+.style-page {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px 80px;
+}
+
+.style-page h1 {
+    font-family: "Poppins";
+    font-size: 2.3rem;
+}
+
+.style-page > p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+/* Tipografia */
+.font-sample { margin-bottom: 24px; }
+
+.show-h1 {
+    font-family: "Poppins";
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.show-h2 {
+    font-family: "Poppins";
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.show-h3 {
+    font-family: "Poppins";
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.show-p {
+    font-family: "Inter";
+    line-height: 1.6;
+}
+
+.info {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Baseline */
+.baseline-line {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 10px 16px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+}
+
+/* Escala */
+.t-small { font-size: 0.875rem; }
+.t-base  { font-size: 1rem; }
+.t-large { font-size: 1.5rem; }
+.t-xl    { font-size: 2rem; }
+
+.contrast-good {
+    background: #bbf7d0;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.contrast-bad {
+    background: #e5e5e5;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+/* Icones */
+.icon-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 16px 0 28px;
+    text-align: center;
+}
+
+/* Botons */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    background: var(--accent);
+    color: #052e16;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-icon:hover {
+    transform: translateY(-2px);
+    background: #22c55e;
+}
+
+.link-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 20px;
+    color: #16a34a;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.link-icon:hover {
+    letter-spacing: 1.5px;
+}
+
+/* Colors (sin tabla) */
+.color-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.color-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.swatch {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* =========================================================
+   MOVIL / IPHONE SE
+========================================================= */
+
+@media (max-width: 400px) {
+    .hero-content {
+        padding: 28px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
